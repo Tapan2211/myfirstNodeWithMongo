@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
-    title: String,
-    auther: [String],
-    content: String,
-    publishAt: Date,
-    name: String,
-    city: String,
-    country: String,
-    salary: Number
+    title: {type: String, required: true, unique:true},
+    auther: {type: [String]},
+    content: {type :String, default:""},
+    publishAt: {type: Date, default :null},
+    name: {type: String},
+    city: {type :String},
+    country: {type: String},
+    salary: {type : Number}
 })
 
 const blogModel = mongoose.model('Blogs', blogSchema, "websiteBlogs");

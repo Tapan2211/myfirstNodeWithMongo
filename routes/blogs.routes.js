@@ -1,7 +1,10 @@
 const router = require('express').Router();
 
-const { createBlogs } = require('../controllers/blogs.controller');
+const { createBlogs, getAllBlogs } = require('../controllers/blogs.controller');
 
-router.get('/new', createBlogs);
+console.log("Blogs Routes");
 
-module.exports = router;
+router.post('/new', createBlogs);
+router.get('/', getAllBlogs);
+
+module.exports = router 
